@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointments</title>
+    <style>
+        .image-container img {
+            width: 400px;
+            height: 450px;
+        }
+        h2 {
+            background-color: #07fedd; /* dark gray footer */
+            color: #0c0c0c; /* white text */
+            padding: 5px;
+            text-align: left;
+            clear: both;
+        }
+        
+        .book-btn {
+            background-color: #2ecc71; /* green color */
+            color: #ffffff; /* white text color */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        
+        .book-btn:hover {
+            background-color: #1e8653; /* darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <h2>APPOINTMENTS</h2>
+    <div class="image-container">
+        <img src="https://static.vecteezy.com/system/resources/previews/013/141/034/original/book-doctor-appointment-card-template-schedule-hospital-visit-editable-social-media-post-design-flat-color-illustration-for-poster-web-banner-ecard-vector.jpg" alt="Book Doctor Appointment Image">
+    </div>
+    <ul>
+        {% for appointment in appointments %}
+            <li>{{ appointment.patient.name }} with {{ appointment.doctor.name }} on {{ appointment.appointment_date }} - {{ appointment.description }}</li>
+        {% endfor %}
+    </ul>
+    <p><a href="book_appointment" class="book-btn">Book Your Appointment</a></p>
+</body>
+</html>

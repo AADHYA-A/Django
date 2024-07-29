@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctors</title>
+    <style>
+       .image-container img {
+            width: 450px;
+            height: 400px;
+        }
+        h2 {
+            background-color: #07fedd; /* dark gray footer */
+            color: #0c0c0c; /* white text */
+            padding: 5px;
+            text-align: left;
+            clear: both;
+        }
+        
+       .register-btn {
+            background-color: #2ecc71; /* green color */
+            color: #ffffff; /* white text color */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+       .register-btn:hover {
+            background-color: #1e8653; /* darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <h2>DOCTORS</h2>
+    <div class="image-container">
+        <img src="https://static.vecteezy.com/system/resources/previews/000/608/082/original/vector-set-of-doctor-cartoon-characters-medical-staff-team-concept.jpg" alt="Medical Staff Team Concept Image">
+    </div>
+    <ul>
+        {% for doctor in doctors %}
+            <li>{{ doctor.name }} (Specialization: {{ doctor.specialization }}) - Department: {{ doctor.department.name }}</li>
+        {% endfor %}
+    </ul>
+    <p><a href="register_doctor" class="register-btn">Register New Doctor</a></p>
+</body>
+</html>

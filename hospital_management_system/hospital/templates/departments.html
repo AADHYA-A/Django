@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Departments</title>
+    <style>
+        .image-container img {
+            width: 450px;
+            height: 400px;
+        }
+        h2 {
+            background-color: #07fedd; /* dark gray footer */
+            color: #0c0c0c; /* white text */
+            padding: 5px;
+            text-align: left;
+            clear: both;
+        }
+        
+        .register-btn {
+            background-color: #2ecc71; /* green color */
+            color: #ffffff; /* white text color */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .register-btn:hover {
+            background-color: #1e8653; /* darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <h2>DEPARTMENTS</h2>
+    <div class="image-container">
+        <img src="https://static.vecteezy.com/system/resources/previews/000/676/792/original/medical-concept-with-doctor-and-patients-in-flat-cartoon-at-hospital-hall.jpg" alt="Medical Concept Image">
+    </div>
+    <ul>
+        {% for department in departments %}
+            <li>{{ department.name }}</li>
+        {% endfor %}
+    </ul>
+    <p><a href="register_department" class="register-btn">Register New Department</a></p>
+</body>
+</html>
